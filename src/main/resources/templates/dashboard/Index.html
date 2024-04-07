@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/global.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <header>
+        <a href="http://localhost:8080"><</a>
+        <p class="title">DASHBOARD</p>
+        <button class="bell"><i class="fa fa-bell" style="font-size:24px"></i></button>
+    </header>
+    <section>
+        <label class="switch">
+            <input type="checkbox" checked>
+            <span class="slider round">
+                <p class="textCheckBox">Pendentes</p>
+                <p class="textCheckBox">Concluidas</p>
+            </span>
+        </label>
+        <div class="produto" th:each="produto : ${produtos}">
+            <div class="stausId">
+                <div class="bolinha"></div>
+                <p class="idProduto" th:text="${produto.getId()}"></p>
+            </div>
+            <p class="nomeProduto" th:text="${produto.getNome()}"></p>
+        </div>
+    </section>
+</body>
+</html>
