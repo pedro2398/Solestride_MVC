@@ -31,7 +31,7 @@ public class Requisicao {
     @NotNull
     @Positive
     @Column(name = "QTD_REQUISICAO", nullable = false)
-    private Integer quantidade;
+    private BigDecimal quantidade;
 
     @NotNull
     @Positive
@@ -50,4 +50,6 @@ public class Requisicao {
             nullable = false
     )
     private Produto produto;
+
+    private BigDecimal valorTotal;
 }

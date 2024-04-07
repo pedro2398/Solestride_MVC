@@ -21,12 +21,12 @@
                 <p class="textCheckBox">Concluidas</p>
             </span>
         </label>
-        <div class="produto" th:each="produto : ${produtos}">
+        <div class="produto" th:each="requisicao : ${requisicoes}">
             <div class="stausId">
                 <div class="bolinha"></div>
-                <p class="idProduto" th:text="${produto.getId()}"></p>
+                <p class="idRequisicao" th:text="${requisicao.getId()}"></p>
             </div>
-            <p class="nomeProduto" th:text="${produto.getNome()}"></p>
+            <p class="nomeNome" th:text="${requisicao.getNome()}"></p>
         </div>
     </section>
 </body>
