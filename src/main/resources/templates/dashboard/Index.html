@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Dashboard</title>
+    <title>Solestride</title>
     <link rel="stylesheet" href="/global.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,13 +21,14 @@
                 <p class="textCheckBox">Concluidas</p>
             </span>
         </label>
-        <div class="produto" th:each="requisicao : ${requisicoes}">
+        <a th:href="${'http://localhost:8080/dashboard/requisicao/' + requisicao.getId()}" class="requisicao" th:each="requisicao : ${requisicoes}">
             <div class="stausId">
                 <div class="bolinha"></div>
                 <p class="idRequisicao" th:text="${requisicao.getId()}"></p>
+                <p class="nomeProduto" th:text="${requisicao.getProduto().getNome()}"></p>
             </div>
-            <p class="nomeNome" th:text="${requisicao.getNome()}"></p>
-        </div>
+            <p class="valorTotal" th:text="${'R$ ' + requisicao.getValorTotal()}"></p>
+        </a>
     </section>
 </body>
 </html>
